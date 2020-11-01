@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frutas 1</title>
+    <style>* {font-family: sans-serif;}</style>
+</head>
+<body>
+    <script>
+        let val = '';
+        let arr = [];
+
+        for (let i = 0; i < 5; i++) {
+            val = prompt('Enter fruit: ')
+            arr.push(val);
+        }
+
+        document.write(arr.sort().join(', '));
+    </script>
+</body>
+</html>

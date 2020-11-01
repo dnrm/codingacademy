@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hipotenusa</title>
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Encuentra la hipotenusa</h1>
+    <script>
+        var lado1 = parseInt(prompt('Cateto 1?')) ** 2;
+        var lado2 = parseInt(prompt('Cateto 2?')) ** 2;
+        let sum = Math.sqrt(lado2 + lado1);
+        alert("La hypotenusa es " + sum.toFixed(2));
+    </script>
+</body>
+</html>

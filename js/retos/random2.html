@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random range</title>
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :-webkit-full-screen {
+            background-color: white;
+        }
+
+        /* Firefox syntax */
+        :-moz-full-screen {
+            background-color: white;
+        }
+
+        /* IE/Edge syntax */
+        :-ms-fullscreen {
+            background-color: white;
+        }
+
+        /* Standard syntax */
+        :fullscreen {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 onclick="openFs()">Random Number</h1>
+    <script>
+        let elem = document.querySelector('h1')
+        let min = parseInt(prompt("Enter the smaller number:"));
+        let max = parseInt(prompt("Enter the larger number:"));
+        randomNum(min, max)
+
+        function randomNum(min, max) {
+            document.write("El numero random es: " + Math.floor((Math.random() * (max - min) + min)));
+        }
+
+        function openFs() {
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+            } else if (document.documentElement.mozRequestFullScreen) { /* Firefox */
+                document.documentElement.mozRequestFullScreen();
+            } else if (document.documentElement.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                document.documentElement.webkitRequestFullscreen();
+            } else if (document.documentElement.msRequestFullscreen) { /* IE/Edge */
+                document.documentElement.msRequestFullscreen();
+            }
+        }
+    </script>
+</body>
+</html>

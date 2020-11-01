@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arreglos 4</title>
+</head>
+<body>
+    <script>
+        let val = '';
+        let arr = [];
+
+        for (let i = 0; i < 5; i++) {
+            val = prompt('Enter number: ')
+            arr.push(val);
+        }
+
+        arr = arr.sort((a, b) => b - a);
+        arr.pop();
+        arr.shift();
+
+        document.write(arr.join(' / '));
+    </script>
+</body>
+</html>

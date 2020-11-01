@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclos 15</title>
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let currentNum = 1;
+        let until = parseInt(prompt("Enter your number here"));
+        for (i = 1; i <= until; i++) {
+            for (k = (until - 1); k >= i; k--) {
+                document.write('.');
+            }
+            for (j = 1; j <= i; j++) {
+                document.write(currentNum);
+            }
+            currentNum += 1;
+            document.write('<br>');
+        }
+    </script>
+    <p>Hola</p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 4</title>
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>aiowhfoawihf</h1>
+    <script>
+        const h1 = document.querySelector('h1')
+        let a = 0
+
+        let cycle = setInterval(function() {
+            if (a != 101) {
+                h1.innerText = a++
+            } else {
+                let el = document.createElement('h1')
+                el.innerText = 'You Won!'
+
+                document.body.appendChild(el)
+                clearInterval(cycle)
+            }
+        }, 30, 0)
+    </script>
+</body>
+</html>

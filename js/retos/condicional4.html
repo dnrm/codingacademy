@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicional 4</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-decoration: none;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        console.log('Hola prof, como estas')
+        let n1 = parseInt(prompt('First number: '));
+        let n2 = parseInt(prompt('Second number: '));
+        let n3 = parseInt(prompt('Third number: '));
+        let product = n1 * n2 * n3;
+        console.log(product);
+        if (product > 0) {
+            alert('Positive');
+        } else if (product < 0) {
+            alert('Negative');
+        } else if (product == 0) {
+            alert('Zero');
+        }
+    </script>
+    <main>
+        <h1>Go to my new website!</h1>
+        <a href="https://dannermm.com">dannermm.com</a>
+    </main>
+</body>
+</html>

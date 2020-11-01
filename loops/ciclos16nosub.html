@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclos 16</title>
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        //
+        //
+        // Ya se que no hay acentos es que mi teclado es el de Estados Unidos :)
+        //
+        //
+        let str = '';
+        let toggle = true;
+        let until = parseInt(prompt("Enter your number here"));
+        for (i = 1; i <= until; i++) {
+            // repite esto el numero de veces que el usuario quiere
+            for (k = 0; k < until; k++) {
+                // si el toggle es verdadero, pone + e invierte el toggle. Lo mismo por si el toggle es falso
+                if (toggle == true) {
+                    str = str + '+';
+                    toggle = false;
+                } else if (toggle == false) {
+                    str = str + '-';
+                    toggle = true;
+                }
+            }
+            // Si el numero que el usuario puso es impar, invierte el toggle. Esto es como para resetearlo y que alterne el patron
+            if (until % 2 == 0) {
+                if (toggle == true) {
+                    toggle = false;
+                } else if (toggle == false) {
+                    toggle = true;
+                }
+            }
+            // Escribe el resultado y resetea la variable string
+            document.write(str + '<br>')
+            str = '';
+        }
+    </script>
+    <p>Hola</p>
+</body>
+</html>

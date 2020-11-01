@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While 9</title>
+</head>
+<body>
+    <script>
+        let input = parseInt(prompt('Number?'));
+        var num = input;
+        let middle = '';
+        let reverseMiddleDigits = '';
+        let finalMiddleDits = '';
+        let lastDigit = num % 10;
+        inBetween(num);
+        alert(lastDigit + '' + finalMiddleDits + '' + firstDigit(input));
+
+        function firstDigit(x) {
+            while (x > 9) {
+                x = parseInt(x / 10);
+            }
+            return x;
+        }
+
+        function inBetween(x) {
+            x = parseInt(x / 10);
+            middle += x;
+            while (middle > 0) {
+                reverseMiddleDigits += middle % 10;
+                middle = parseInt(middle / 10);
+            }
+            reverseMiddleDigits = parseInt(reverseMiddleDigits / 10);
+            while (reverseMiddleDigits > 0) {
+                finalMiddleDits += reverseMiddleDigits % 10;
+                reverseMiddleDigits = parseInt(reverseMiddleDigits / 10);
+            }
+        }
+    </script>
+</body>
+</html>

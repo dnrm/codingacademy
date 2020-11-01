@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REG</title>
+    <style>
+        table, td, tr {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Lastname</th>
+        </tr>
+        <tr>
+            <td id="t1"></td>
+            <td id="t2"></td>
+            <td id="t3"></td>
+        </tr>
+    </table>
+    <script>
+        let name = prompt('Cual es tu nombre?')
+        let lastname = prompt('Cual es tu apellido?')
+        let age = prompt('Cual es tu año de nacimiento')
+        parseInt(age)
+        let result = 2020 - age
+        document.getElementById('t1').innerText = name
+        document.getElementById('t2').innerText = lastname
+        document.getElementById('t3').innerText = (result - 1) + ' or ' + result
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [];
+        let count = 0;
+        let max = 0;
+        let flag = true;
+
+        while (flag == true) {
+            arr.push(prompt('Enter a number: '));
+
+            let choice = prompt('Enter another number?');
+
+            if (choice == 'no') {
+                flag = false;
+            }
+        }
+
+        let result = mode(arr)
+
+        function mode(array) {
+            let arr = array;
+            max = 1;
+            counter = 0;
+            let item;
+            for (i = 0; i < arr.length; i++) {
+                for (var j = i; j < arr.length; j++) {
+                    if (arr[i] == arr[j]) {
+                        counter++;
+                    }
+
+                    if (max < counter) {
+                        max = counter;
+                        item = arr[i];
+                    }
+                }
+                counter = 0;
+            }
+            return item;
+        }
+
+        alert(`El numero que mas veces se repite es ${result}. Se repite ${max} veces.`)
+    </script>
+</body>
+</html>

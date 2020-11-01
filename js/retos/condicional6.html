@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicional 6</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-decoration: none;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        console.log('Hola prof, como estas')
+        let grade = parseInt(prompt('Calificacion: '));
+        if (grade == 100) {
+            alert('A!');
+        } else if (grade >= 90 && grade <= 99) {
+            alert('B');
+        } else if (grade >= 80 && grade <= 89) {
+            alert('C');
+        } else if (grade >= 70 && grade <= 79) {
+            alert('D');
+        } else if (grade >= 60 && grade <= 69) {
+            alert('E');
+        } else if (grade >= 0 && grade <= 59) {
+            alert('F lol');
+        }
+    </script>
+    <main>
+        <h1>Go to my new website!</h1>
+        <a href="https://dannermm.com">dannermm.com</a>
+    </main>
+</body>
+</html>

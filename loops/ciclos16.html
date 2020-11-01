@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclos 16</title>
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let str = '+-';
+        let str2 = '-+';
+        let until = parseInt(prompt("Enter your number here"));
+        for (i = 1; i <= until; i++) {
+            if (i % 2 == 1) {
+                document.write(str.repeat(until).substring(0, until) + '<br>');
+            } else {
+                document.write(str2.repeat(until).substring(0, until) + '<br>');
+            }
+        }
+        console.log(until % 2);
+    </script>
+    <p>Hola</p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclos 14</title>
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let until = parseInt(prompt("Enter your number here"));
+        for (i = 1; i <= until; i++) {
+            for (j = 1; j <= i; j++) {
+                document.write('*');
+            }
+            document.write('<br>');
+        }
+        for (i = until; i >= 1; i--) {
+            for (j = 1; j <= i; j++) {
+                document.write('*');
+            }
+            document.write('<br>');
+        }
+    </script>
+    <p>Hola</p>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicional 8</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-decoration: none;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        console.log('Hola prof, como estas')
+        let day = parseInt(prompt('Día: '));
+        let month = parseInt(prompt('Mes (si es de un digito solo pon el digito, que no tenga ceros por favor): '));
+        let year = parseInt(prompt('Año: '));
+        let date = day + '/' + month + "/" + year;
+        let age;
+        console.log(date)
+        if (month > 8) {
+            if (day > 29) {
+                age = 2020 - year - 1;
+                console.log('month greater than 8 and day greater than 29');
+            } else if (day <= 28) {
+                age = 2020 - year -1;
+                console.log('month greater than 8 and day less or equal than 29');
+            }
+        } else if (month <= 8) {
+            age = (2020 - year);
+            console.log('month less than 8');
+        }
+        alert(age)
+    </script>
+    <main>
+        <h1>Go to my new website!</h1>
+        <a href="https://dannermm.com">dannermm.com</a>
+    </main>
+</body>
+</html>

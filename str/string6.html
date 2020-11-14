@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String 6</title>
+    <link rel="stylesheet" href="bg.css">
+    <link rel="stylesheet" href="ex.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 id="heading"></h1>
+    <script>
+        let str = prompt('String?').toLowerCase();
+        let query = prompt('Letter?').toLowerCase();
+
+        if (str.indexOf(query) != -1) {
+            alert(`La letra "${query}" si se encuentra en el string`);
+        } else {
+            alert(`La letra "${query}" no se encuentra en el string`)
+        }
+
+        document.getElementById('heading').innerText = document.title;
+    </script>
+</body>
+</html>

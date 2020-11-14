@@ -1,0 +1,295 @@
+* {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    margin: 25px;
+}
+
+body {
+    min-height: 100vh;
+    background: #0f0f0f;
+    background-size: cover;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo > img {
+    width: 100px;
+}
+
+.logo > h1 {
+    display: inline;
+    font-size: 4em;
+    margin: 15px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 0%;
+    background: url(line.png);
+    background-position: bottom;
+    background-repeat: repeat-x;
+}
+
+.line-img img {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    text-transform: uppercase;
+}
+
+header p {
+    color: #edf0f1;
+    font-size: 1.4em;
+}
+
+.logo-nav {
+    cursor: pointer;
+    font-weight: 700;
+    font-family: 'Rubik', sans-serif;
+}
+
+.nav__links {
+    list-style: none;
+}
+
+.nav__links li {
+    display: inline-block;
+    padding: 0 20px;
+    transition: 1s;
+}
+
+.nav__links li a {
+    text-decoration: none;
+    position: relative;
+    font-size: 1.4em;
+    transition: 1s;
+}
+
+.nav__links li a::after {
+    content: "";
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    bottom: -5px;
+    border: 2px solid white;
+    display: none;
+    transition: 1s;
+}
+
+.nav__links li a:hover::after {
+    display: block;
+}
+
+.banner {
+    text-align: center;
+    margin: 10%;
+    background: url(banner.png);
+    padding-top: 25vh;
+    background-size: cover;
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 0px 10px 5px rgba(170, 170, 170, 0.75);
+    -moz-box-shadow: 0px 0px 10px 5px rgba(170, 170, 170, 0.75);
+    box-shadow: 0px 0px 10px 5px rgba(170, 170, 170, 0.75);
+}
+
+.scnd {
+    background: url(https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/1.jpg);
+    background-size: cover;
+}
+
+.banner .desc {
+    margin: 0;
+    text-align: center;
+    padding: 20px;
+    font-weight: 700;
+    text-align: left;
+    background-color: rgba(0,0,0,0.8);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.desc p, a {
+    display: inline;
+}
+
+.desc #flot {
+    float: left;
+}
+
+.desc a {
+    float: right;
+    background-color: rgb(35, 34, 86);
+    text-decoration: none;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.main-text {
+    width: 100%;
+}
+
+.main-text p {
+    text-align: justify;
+    margin-right: 30px;
+}
+
+.card {
+    background-color: black;
+    width: 100%;
+    -webkit-box-shadow: 0px 0px 10px 5px rgba(170, 170, 170, 0.75);
+    -moz-box-shadow: 0px 0px 10px 5px rgba(170, 170, 170, 0.75);
+    box-shadow: 0px 0px 10px 5px rgba(170, 170, 170, 0.75);
+    border-radius: 15px;
+}
+
+.card #hack {
+    width: 80%;
+    text-align: center;
+    border: 2px rgb(58, 58, 58) solid;
+}
+
+.card h1 {
+    padding: 15px;
+}
+
+.card .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+footer {
+    margin-top: 20px;
+    padding: 0px 0%;
+    background: url(line.png);
+    background-position: top;
+    background-repeat: repeat-x;
+}
+
+.c {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .c a {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer .grid {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
+.projects img {
+    width: 40px;
+}
+
+@media screen and (max-width: 748px) {
+    .grid {
+        grid-template-columns: auto;
+    }
+}
+
+#shake {
+    animation: shake 3s infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    5% {
+        transform: rotate(45deg);
+    }
+
+    15% {
+        transform: rotate(-45deg);
+    }
+
+    20% {
+        transform: rotate(45deg);
+    }
+
+    25% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.white-space ul {
+    padding: 0;
+}
+
+
+.white-space ul li {
+    display: inline;
+}
+
+.grid-pr {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.grid-pr p {
+    margin: 0;
+}
+
+button {
+    padding: 15px;
+    border: none;
+    background-color: #696969;
+    border-radius: 15px;
+}
+
+.hacked-text {
+    text-align: center;
+    animation: grow 2s infinite;
+}
+
+@keyframes grow {
+    0% {
+        transform: skew(0);
+        color: rgb(0, 255, 21);
+    }
+
+    50% {
+        transform: skew(180deg);
+        color: #fff;
+    }
+
+    100% {
+        transform: skew(360deg);
+        color: rgb(0, 255, 21);
+    }
+}

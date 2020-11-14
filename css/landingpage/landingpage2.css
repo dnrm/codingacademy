@@ -1,0 +1,15 @@
+* {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+}
+
+.container {
+    margin: 25px;
+}
+
+body {
+    min-height: 100vh;
+    background: rgb(128,59,89);
+    background: linear-gradient(149deg, rgba(128,59,89,1) 0%, rgba(27,72,88,1) 100%);
+    background-size: cover;
+}

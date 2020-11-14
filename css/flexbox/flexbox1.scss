@@ -1,0 +1,22 @@
+* {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 1.2em;
+}
+
+.flxbx {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.square {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(230, 230, 230);
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}

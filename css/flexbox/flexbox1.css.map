@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,OAAO,CAAC;EACJ,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EACb,gBAAgB,EAAE,OAAkB;EACpC,KAAK,EAAE,KAAK;CACf",
+    "sources": [
+        "flexbox1.scss"
+    ],
+    "names": [],
+    "file": "flexbox1.css"
+}

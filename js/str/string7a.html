@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String 7a</title>
+    <link rel="stylesheet" href="bg.css">
+    <link rel="stylesheet" href="ex.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 id="heading"></h1>
+    <script>
+        let str = prompt('String?').toLowerCase();
+
+        str = str.replace(/,/g, "");
+
+        console.log(str);
+        alert(str);
+
+        document.getElementById('heading').innerText = document.title;
+    </script>
+</body>
+</html>

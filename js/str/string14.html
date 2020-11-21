@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>String 2</title>
-    <link rel="stylesheet" href="ex.css">
+    <title>String 14</title>
     <link rel="stylesheet" href="bg.css">
+    <link rel="stylesheet" href="ex.css">
     <link rel="stylesheet" href="nav.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
@@ -14,8 +14,25 @@
     <a href="https://dannermm.com/codingacademy/js/str" id="navlink">Go to string index</a>
     <h1 id="heading"></h1>
     <script>
-        let result = prompt("Ingresa un string");
-        alert(`${result[0]} - ${result[result.length - 1]}`);
+        let str = prompt('Enter string:')
+        var max = 0
+
+        function getMax(str) {
+            maxChar = '';
+
+            str.split('').forEach(char => {
+                if(str.split(char).length > max) {
+                    max = str.split(char).length;
+                    maxChar = char;
+                }
+            });
+
+            return maxChar;
+        };
+
+        alert(`El caracter que mas aparece es "${getMax(str)}"" con un total de ${max - 1} veces`);
+
+
         document.getElementById('heading').innerText = document.title;
     </script>
 </body>

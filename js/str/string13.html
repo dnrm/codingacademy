@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String 13</title>
+    <link rel="stylesheet" href="bg.css">
+    <link rel="stylesheet" href="ex.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="https://dannermm.com/codingacademy/js/str" id="navlink">Go to string index</a>
+    <h1 id="heading"></h1>
+    <script>
+        let str = prompt('Enter text').toLowerCase();
+
+        function palindrome(str) {
+            str = str.split(',').join('');
+            str = str.split('.').join('');
+            str = str.split('!').join('');
+            str = str.split('?').join('');
+            str = str.split(' ').join('');
+            str = str.split(':').join('');
+            str = str.split('"').join('');
+            str = str.split('”').join('');
+            str = str.split('“').join('');
+            str = str.split('á').join('a');
+            str = str.split('é').join('e');
+            str = str.split('í').join('i');
+            str = str.split('ó').join('o');
+            str = str.split('ú').join('u');
+
+            console.log(str);
+            
+            var len = str.length;
+            for (var i = 0; i < len/2; i++) {
+                if (str[i] !== str[len - 1 - i]) {
+                    return alert(`No es palindromo`);
+                }
+            }
+            return alert(`Si es palindromo`);
+        }
+
+        palindrome(str);
+
+        document.getElementById('heading').innerText = document.title;
+    </script>
+</body>
+</html>

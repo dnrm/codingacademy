@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>String 2</title>
-    <link rel="stylesheet" href="ex.css">
+    <title>String 8a</title>
     <link rel="stylesheet" href="bg.css">
+    <link rel="stylesheet" href="ex.css">
     <link rel="stylesheet" href="nav.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
@@ -14,8 +14,24 @@
     <a href="https://dannermm.com/codingacademy/js/str" id="navlink">Go to string index</a>
     <h1 id="heading"></h1>
     <script>
-        let result = prompt("Ingresa un string");
-        alert(`${result[0]} - ${result[result.length - 1]}`);
+        let str = prompt('Nombre y apellido(s)?');
+        let newArr = []
+
+        const separateIntoWords = (str) => {
+            return str.split(" ");
+        }
+
+        const capitalise = (arr) => {
+            for (let i = 0; i < arr.length; i++) {
+                newArr.push(`${arr[i][0].toUpperCase()}${arr[i].substring(1, arr[i].length)}`);
+            }
+        }
+
+        let result = separateIntoWords(str);
+        capitalise(result);
+
+        alert(newArr.join(' '));
+
         document.getElementById('heading').innerText = document.title;
     </script>
 </body>

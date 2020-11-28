@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>String 7</title>
+    <title>String 9a</title>
     <link rel="stylesheet" href="bg.css">
     <link rel="stylesheet" href="ex.css">
     <link rel="stylesheet" href="nav.css">
@@ -14,17 +14,12 @@
     <a href="https://dannermm.com/codingacademy/js/str" id="navlink">Go to string index</a>
     <h1 id="heading"></h1>
     <script>
-        let str = prompt('String?').toLowerCase();
-
-        str = str.replace(/á/g, "a");
-        str = str.replace(/é/g, "e");
-        str = str.replace(/í/g, "i");
-        str = str.replace(/ó/g, "o");
-        str = str.replace(/ú/g, "u");
-
-        console.log(str);
-        alert(str);
-
+        let str = prompt('Enter string:')
+        if (!isNaN(str) && str.length == 10) {
+            alert(`El número es válido`);
+        } else {
+            alert('El número no es válido');
+        }
         document.getElementById('heading').innerText = document.title;
     </script>
 </body>

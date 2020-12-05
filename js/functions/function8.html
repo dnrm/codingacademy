@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions 8 | Nombres</title>
+</head>
+<body>
+    <script>
+        function nombres(str) {
+            let newArr = []
+
+            const separateIntoWords = (str) => {
+                return str.split(" ");
+            }
+
+            const capitalise = (arr) => {
+                for (let i = 0; i < arr.length; i++) {
+                    newArr.push(`${arr[i][0].toUpperCase()}${arr[i].substring(1, arr[i].length)}`);
+                }
+            }
+
+            let result = separateIntoWords(str);
+            capitalise(result);
+
+            return (newArr.join(' '));
+        }
+
+        console.log(nombres('Daniel'));
+    </script>
+</body>
+</html>

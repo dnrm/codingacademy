@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions 12 | Bisiesto</title>
+</head>
+<body>
+    <script>
+        function bisiesto(year) {
+            if (year % 4 == 0) {
+                if (year % 100 == 0) {
+                    if (year % 400 == 0) {
+                        return true;
+                    }
+                    return false;
+                }
+                return true;
+            }
+            return false;
+        }
+
+        console.log(bisiesto(2600)); // <-- Should return false
+        console.log(bisiesto(2020)); // <-- Should return true
+        console.log(bisiesto(2000)); // <-- Should return true
+    </script>
+</body>
+</html>

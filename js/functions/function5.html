@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions 5</title>
+</head>
+<body>
+    <script>
+        function acentos(str) {
+            str = str.replace(/á/g, "a");
+            str = str.replace(/é/g, "e");
+            str = str.replace(/í/g, "i");
+            str = str.replace(/ó/g, "o");
+            str = str.replace(/ú/g, "u");
+            return str;
+        }
+
+        console.log(acentos('canción'));
+    </script>
+</body>
+</html>

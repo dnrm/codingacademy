@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions 11 | Telefonos 2</title>
+</head>
+<body>
+    <script>
+        function telefonos(str) {
+            if (!isNaN(str) && str.length == 10) {
+                if (str.slice(0, 2) == '81' || str.slice(0, 2) == '55' || str.slice(0, 2) == '33') {
+                    return `(${str.slice(0, 2)})${str.slice(2, 6)}-${str.slice(6, 10)}`;
+                } else {
+                    return `(${str.slice(0, 3)})${str.slice(3, 6)}-${str.slice(6, 10)}`;
+                }
+            } else {
+                return 'Numero invalido';
+            }
+        }
+
+        console.log(telefonos('8115306623'));
+    </script>
+</body>
+</html>

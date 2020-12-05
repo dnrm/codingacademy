@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions 13 | Pesos</title>
+</head>
+<body>
+    <script>
+        function pesos(amount, unidades=[1000, 500, 200, 50, 20, 10, 5, 2, 1]) {
+            let res = {};
+            let resultado = [];
+
+            for (let i = 0; amount > 0 && i < unidades.length; i++) {
+                let value = unidades[i];
+
+                if (value <= amount) {
+                    res[value] = Math.floor(amount / value);
+                    amount -= value * res[value];
+                }
+            }
+
+            for (amount in res) {
+                resultado.push(`${amount}x${res[amount]}`)
+            }
+
+            return resultado;
+        }
+
+        console.log(pesos(2200));
+    </script>
+</body>
+</html>

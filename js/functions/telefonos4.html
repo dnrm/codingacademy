@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telefonos 4</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Telefonos 4</h1>
+    <h3>Open Console (ctrl/cmd + shift + i)</h3>
+    <script>
+        function telefonos4(str) {
+            if (!isNaN(str) && str.length != 10) {
+                str = str.slice(-10);
+                return str;
+            } else {
+                return str;
+            }
+        }
+    </script>
+</body>
+</html>

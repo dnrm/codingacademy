@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calle y numero</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Calle y numero</h1>
+    <h3>Open Console (ctrl/cmd + shift + i)</h3>
+    <script>
+        const calleynumero = (str) => {
+            index = 0;
+            if (str.includes('#')) {
+                return false;
+            }
+            for (let i = 0; i < str.length; i++) {
+                if (!isNaN(str[i])) {
+                    index = i;
+                }
+            }
+            let calle = str.slice(0, index - 1);
+            let numero = str.slice(index - 1, str.length);
+
+            if (isNaN(calle) && !isNaN(numero)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

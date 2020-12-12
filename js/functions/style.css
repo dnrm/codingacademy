@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+h1 {
+    font-weight: 900;
+    font-family: 'Inter', sans-serif;
+    font-size: 8em;
+    background: linear-gradient(121deg, rgba(255, 21, 0, 1) 0%, rgba(14, 14, 87, 1) 64%, rgba(0, 212, 255, 1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: normal;
+}

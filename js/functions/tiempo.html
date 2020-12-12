@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiempo</title>
+</head>
+<body>
+    <script>
+        let horas = 0;
+        let minutes = 0;
+        let seconds = 0;
+        const tiempo = (num, test = () => null) => {
+            hours = Math.floor(num / 3600);
+            num %= 3600;
+            minutes = Math.floor(num / 60);
+            seconds = num % 60;
+
+            test();
+
+            hours.toString().length == 1 ? hours = `0${hours}` : null;
+            minutes.toString().length == 1 ? minutes = `0${minutes}` : null;
+            seconds.toString().length == 1 ? seconds = `0${seconds}` : null;
+            return `${hours}:${minutes}:${seconds}`;
+        }
+    </script>
+</body>
+</html>

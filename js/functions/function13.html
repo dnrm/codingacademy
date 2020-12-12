@@ -4,27 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Functions 13 | Pesos</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body style="display: flex; min-height: 100vh; justify-content: center; align-items: center; overflow: hidden; flex-direction: column;">
+    <h1 style="font-weight: 900; font-family: 'Inter', sans-serif; font-size: 8em; background: linear-gradient(121deg, rgba(255,21,0,1) 0%, rgba(14,14,87,1) 64%, rgba(0,212,255,1) 100%); -webkit-background-clip: text;-webkit-text-fill-color: transparent;">Functions 13</h1>
+    <h3 style="font-family: 'Inter', sans-serif; font-weight: normal;">Open Console (ctrl/cmd + shift + i)</h3>
     <script>
-        function pesos(amount, unidades=[1000, 500, 200, 50, 20, 10, 5, 2, 1]) {
-            let res = {};
-            let resultado = [];
-
-            for (let i = 0; amount > 0 && i < unidades.length; i++) {
-                let value = unidades[i];
-
-                if (value <= amount) {
-                    res[value] = Math.floor(amount / value);
-                    amount -= value * res[value];
-                }
+        function pesos(amount, unidades=[1000, 500, 100, 200, 50, 20, 10, 5, 2, 1]) {
+            let change = [];
+            if (amount > 1000) {
+                change.push(`$1000x${Math.floor(amount / 1000)}`);
+                amount -= (Math.floor(amount / 1000)) * 1000;
+            }
+            if (amount > 500) {
+                change.push(`$500x${Math.floor(amount / 500)}`);
+                amount -= (Math.floor(amount / 500)) * 500;
+            }
+            if (amount > 200) {
+                change.push(`$200x${Math.floor(amount / 200)}`);
+                amount -= (Math.floor(amount / 200)) * 200;
+            }
+            if (amount > 100) {
+                change.push(`$100x${Math.floor(amount / 100)}`);
+                amount -= (Math.floor(amount / 100)) * 100;
+            }
+            if (amount > 50) {
+                change.push(`$50x${Math.floor(amount / 50)}`);
+                amount -= (Math.floor(amount / 50)) * 50;
+            }
+            if (amount > 20) {
+                change.push(`$20x${Math.floor(amount / 20)}`);
+                amount -= (Math.floor(amount / 20)) * 20;
+            }
+            if (amount > 10) {
+                change.push(`$10x${Math.floor(amount / 10)}`);
+                amount -= (Math.floor(amount / 10)) * 10;
+            }
+            if (amount > 5) {
+                change.push(`$5x${Math.floor(amount / 5)}`);
+                amount -= (Math.floor(amount / 5)) * 5;
+            }
+            if (amount > 2) {
+                change.push(`$2x${Math.floor(amount / 2)}`);
+                amount -= (Math.floor(amount / 2)) * 2;
+            }
+            if (amount > 1 || amount == 1) {
+                change.push(`$1x${Math.floor(amount / 1)}`);
+                amount -= (Math.floor(amount / 1)) * 1;
             }
 
-            for (amount in res) {
-                resultado.push(`${amount}x${res[amount]}`)
-            }
-
-            return resultado;
+            return change.join(', ');
         }
 
         console.log(pesos(2200));

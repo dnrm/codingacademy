@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rango 3</title>
+</head>
+<body>
+    <script>
+        const rango3 = (num1, num2, num3, num4, num5) => {
+            const arr = [num1, num2, num3, num4, num5].sort(function(a, b){return a - b});
+            const menor = arr[0];
+            const mayor = arr[arr.length -1];
+            let result = [];
+            for (let i = menor + 1; i < mayor; i++) {
+                if (!arr.includes(i)) {
+                    result.push(`${i}`)
+                } 
+            }
+            return result.join(',');
+        }
+    </script>
+</body>
+</html>

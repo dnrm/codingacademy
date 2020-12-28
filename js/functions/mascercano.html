@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mas Cercano</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="prism.css">
+</head>
+<body>
+    <h1 title="hola profe">Mas Cercano</h1>
+    <pre><code class="language-javascript">const mascercano = (...arguments) => {
+    let closest = 0;
+    arguments.forEach(item => closest == 0 ? closest = item :
+        item > 0 && item <= Math.abs(closest) ? closest = item :
+        item < 0 && -item < Math.abs(closest) ? closest = item :
+        null
+    )
+    return closest;
+}</code></pre>
+    <script>
+        const mascercano = (...arguments) => {
+            let closest = 0;
+            arguments.forEach(item => closest == 0 ? closest = item : item > 0 && item <= Math.abs(closest) ? closest = item : item < 0 && -item < Math.abs(closest) ? closest = item : null)
+            return closest;
+        }
+
+        console.log('%c"mascercano()"', "font-size: 2em; color: black; background-color: white; font-weight: bold; display: inline;")
+    </script>
+    <script src="prism.js"></script>
+</body>
+</html>

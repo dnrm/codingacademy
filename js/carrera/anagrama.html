@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anagrama</title>
+</head>
+<body>
+    <script>
+        const anagrama = (stringA, stringB) => {
+            stringA = stringA.replace(/[^\w]/g, '').toLowerCase()
+            stringB = stringB.replace(/[^\w]/g, '').toLowerCase()
+
+            return sortString(stringA) === sortString(stringB)
+        }
+
+        const sortString = (string) => {
+            return string.split('').sort().join('');
+        }
+    </script>
+</body>
+</html>

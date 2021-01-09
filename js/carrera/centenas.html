@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centenas</title>
+</head>
+<body>
+    <script>
+        const centenas = (num) => {
+            num = num.toString();
+            if (num.length <= 2) {
+                return 0;
+            } else {
+                num = num.substr(num.length -3, num.length)
+            }
+            num = num.substr(num.length -3, num.length)
+            return parseInt(num[0]);
+        }
+    </script>
+</body>
+</html>

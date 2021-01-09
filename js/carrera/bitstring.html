@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitstring</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <script>
+
+        const bitstring = (str) => {
+            let longest = 0;
+            for (let i = 0; i < str.length; i++) {
+                let longitude = longestSequence(`${str.substr(0, i)}1${str.substr(i + 1, str.length)}`);
+                if (longitude > longest) {
+                    longest = longitude;
+                }
+            }
+            return longest;
+        }
+
+        const longestSequence = (str) => {
+            str = str.split('0');
+            str = str.filter((item) => item.length > 0);
+            let long = maslargo(...str);
+            return long.length;
+        }
+
+        const maslargo = (...str) => str.reduce((a, b) => a.length > b.length ? a : b);
+
+    </script>
+    <h1>bitstring()</h1>
+</body>
+</html>

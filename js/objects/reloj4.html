@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj 4</title>
+    <link rel="stylesheet" href="https://dannermm.com/codingacademy/js/Global.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script>
+        const reloj = {
+            horas: 12,
+            minutos: 59,
+            segundos: 4,
+            dimeHora() {
+                return `${this.horas> 9 ? this.horas : '0' + this.horas}:${this.minutos > 9 ? this.minutos : '0' + this.minutos}:${this.segundos > 9 ? this.segundos : '0' + this.segundos}`;
+            },
+            
+            estableceTiempo(horas, minutos, segundos) {
+                if (horas <= 24 && minutos <= 59 && segundos <= 59) {
+                    this.horas = horas;
+                    this.minutos = minutos;
+                    this.segundos = segundos;
+                } else {
+                    return "Formato incorrecto."
+                }
+                return this.dimeHora();
+            },
+
+            incrementaHoras() {
+                this.horas == 23 ? this.horas = 0 : this.horas += 1;
+                return this.dimeHora();
+            }
+        }
+    </script>
+    <script src="https://dannermm.com/codingacademy/js/Link.js"></script>
+</body>
+</html>

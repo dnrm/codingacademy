@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Lista 9</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var lista = {
+        alumnos: ["señor javascript", "don html", "señora css"],
+
+        totalAlumnos() {
+          return this.alumnos.length;
+        },
+
+        agregaAlumno(alumno) {
+          this.alumnos.push(alumno);
+          return this.totalAlumnos();
+        },
+
+        imprimeAlumnos(separador) {
+          return this.alumnos.join(separador);
+        },
+
+        eliminaUltimo() {
+          this.alumnos.pop();
+          return this.totalAlumnos();
+        },
+
+        eliminaAlumno(alumno) {
+          let longitud = this.alumnos.length;
+          if (this.alumnos.filter(i => i.toLowerCase() != alumno.toLowerCase()).length == longitud) {
+              return "Alumno no encontrado."
+          }
+          this.alumnos = this.alumnos.filter(i => i.toLowerCase() != alumno.toLowerCase());
+          return this.totalAlumnos();
+        },
+
+        /*
+        *
+        * buscarAlumno ---
+        * @param query Este parametro debe de ser de tipo string
+        *
+        */
+        buscaAlumnos(query) {
+          if (this.alumnos.filter(i => i.toLowerCase()[0] == query.toLowerCase()).length > 0) {
+            return this.alumnos.filter(i => i.toLowerCase()[0] == query.toLowerCase()).join(', ');
+          } else {
+            return "No se encontraron alumnos.";
+          }
+        },
+
+        ordenaLista(tipo) {
+          if (tipo == 'asc') {
+            return this.alumnos.sort((a, b) => {
+              if (a.toLowerCase() < b.toLowerCase()) return -1;
+              if (a.toLowerCase() > b.toLowerCase()) return 1;
+              return 0;
+            }).join(',');
+          } else if (tipo == 'des') {
+            let sorted = this.alumnos.sort((a, b) => {
+              if (a.toLowerCase() < b.toLowerCase()) return -1;
+              if (a.toLowerCase() > b.toLowerCase()) return 1;
+              return 0;
+            })
+            return sorted.reverse().join(',');
+          } else {
+            return "Error";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

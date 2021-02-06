@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Lista 3</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var lista = {
+        alumnos: ["señor javascript", "don html", "señora css"],
+
+        totalAlumnos() {
+          return this.alumnos.length;
+        },
+
+        agregaAlumno(alumno) {
+          this.alumnos.push(alumno);
+          return this.totalAlumnos();
+        }
+      }
+    </script>
+  </body>
+</html>

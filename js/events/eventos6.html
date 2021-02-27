@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Eventos</title>
+    </head>
+    <body>
+        <p id="bienvenido">Bienvenido</p>
+        <p>
+            Tu nombre:
+            <input
+                type="text"
+                autocomplete="off"
+                name="nombre"
+                id="nombre"
+                value=""
+                onchange="nombre(this.value)"
+            />
+        </p>
+        <p>
+            Color de background:
+            <select name="color" id="color" onchange="background(this.value)">
+                <option value="blanco">Blanco</option>
+                <option value="rojo">Rojo</option>
+                <option value="verde">Verde</option>
+                <option value="azul">Azul</option>
+            </select>
+        </p>
+        <p>
+            Color de botón:
+            <input
+                type="radio"
+                id="rojo"
+                name="radio1"
+                value="red"
+                onchange="boton(this.value)"
+            />
+            Rojo
+            <input
+                type="radio"
+                id="verde"
+                name="radio1"
+                value="green"
+                onchange="boton(this.value)"
+            />
+            Verde
+            <input
+                type="radio"
+                id="azul"
+                name="radio1"
+                value="blue"
+                onchange="boton(this.value)"
+            />
+            Azul
+        </p>
+        <p>Instrumentos Musicales:</p>
+        <input
+            type="checkbox"
+            id="instrumentos1"
+            name="instrumentos1"
+            value="Guitarra"
+            onchange="instrumentos()"
+        />Guitarra
+        <br />
+        <input
+            type="checkbox"
+            id="instrumentos2"
+            name="instrumentos2"
+            value="Piano"
+            onchange="instrumentos()"
+        />
+        Piano
+        <br />
+        <input
+            type="checkbox"
+            id="instrumentos3"
+            name="instrumentos3"
+            value="Batería"
+            onchange="instrumentos()"
+        />Batería
+        <p>
+            <input
+                type="button"
+                id="boton"
+                name="boton"
+                value="Ningún Instrumento"
+                onclick="aceptar()"
+            />
+        </p>
+        <script>
+            const nombre = (i) =>
+                (document.querySelector(
+                    "#bienvenido"
+                ).innerHTML = `Bienvenido ${i}`);
+
+            const background = (i) => {
+                let color =
+                    i == "verde"
+                        ? "green"
+                        : i == "azul"
+                        ? "blue"
+                        : i == "rojo"
+                        ? "red"
+                        : i == "blanco"
+                        ? "white"
+                        : null;
+                console.log(
+                    (document.querySelector(
+                        "#nombre"
+                    ).style.backgroundColor = color)
+                );
+            };
+        </script>
+    </body>
+</html>

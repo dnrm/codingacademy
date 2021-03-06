@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            .grid-container {
+              display: grid;
+              grid-template-columns: auto auto auto;
+              position:fixed;
+              width:100%;
+              height:100%;
+              justify-items: center;
+              align-items: center;
+            }
+            .grid-item {
+              padding: 20px;
+              font-size: 30px;
+              text-align: center;
+
+            }
+            #pelota {
+                  position: absolute;
+                  left: 300px;
+                  top: 600px;
+              }
+        </style>
+    </head>
+    <body>
+        <div class="grid-container" onmousemove="mueve(event)">
+            <p hidden id="bandera">0</p>
+            <div class="grid-item">
+                <p id="status">Toca el balón</p>
+                <img
+                    id="pelota"
+                    src="https://drive.google.com/uc?export=view&id=14S8Mn-oaBmuuwtSfbzwSgbA_exiR8z_y"
+                    onmouseover="toca()"
+                    onmouseout="reset()"
+                />
+            </div>
+            <div class="grid-item"></div>
+            <div class="grid-item">
+                <p>Goles:</p>
+                <p id="marcador">0</p>
+                <img
+                    id="porteria"
+                    src="https://drive.google.com/uc?export=view&id=18iOZop8QQfAZJsT57gW0Tu-X0qgFj-3E"
+                    onmouseover="gol()"
+                />
+            </div>
+        </div>
+        <script>
+            //Tu código aquí
+            function toca() {
+                document.querySelector('#status').innerText = 'Ahora mete gol!';
+                let touched = 1;
+            }
+
+            function reset() {
+                document.querySelector('#status').innerText = 'Toca el balón';
+            }
+
+            function mueve(e) {}
+
+            function gol() {}
+        </script>
+    </body>
+</html>

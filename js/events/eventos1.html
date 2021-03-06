@@ -54,6 +54,21 @@
       document.querySelector('#boton').onclick = () => {
           document.querySelector('#titulo').innerHTML = 'MITOLOGIA GRIEGA';
       }
+
+      window.onload = () => {
+        const color = window.location.search.split('=')[1];
+        console.log(color);
+
+        if (color == 'rojo') {
+          document.querySelector('#titulo').style.color = 'red';
+        } else if (color == 'azul') {
+          document.querySelector('#titulo').style.color = 'blue';
+        } else if (color == 'verde') {
+          document.querySelector('#titulo').style.color = 'green';
+        } else if (color == 'blanco') {
+          document.querySelector('#titulo').style.color = 'white';
+        }
+      }
     </script>
   </body>
 </html>

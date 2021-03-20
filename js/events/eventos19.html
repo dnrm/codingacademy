@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        font: normal 1em 'Arial';
+      }
+
+      table {
+        font: bold 2em 'Arial Narrow';
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 0.7;
+        padding: 8px;
+        border-spacing: 8px;
+        border: 1px solid #000;
+        background-color: #dbd807;
+        color: #ffffff;
+      }
+
+      .item td {
+        padding: 4px;
+        min-width: 32px;
+        box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.25);
+      }
+
+      #pantalla {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+      }
+
+      #abeja {
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body onload="timer()" onkeydown="pausa(event)">
+    <div id="pantalla">
+      <table>
+        <tr class="item">
+          <td>Tiempo</td>
+          <td id="tiempo">20</td>
+        </tr>
+        <tr class="item">
+          <td>Score</td>
+          <td id="score">0</td>
+        </tr>
+      </table>
+
+      <p hidden id="bandera">0</p>
+      <p hidden id="pausa">0</p>
+
+      <img
+        src="https://drive.google.com/uc?export=view&id=10gsQ9AwEKuwMMpC_7XChRLJYXdW6E7j9"
+        id="abeja"
+        width="100"
+        onmouseover="score()"
+      />
+    </div>
+
+    <script type="text/javascript">
+      // Tu código aquí
+
+      let time, posX, posY;
+      let puntos = 0;
+      let seconds = 20;
+      let tocado = false;
+      let secondsInterval;
+      let pause;
+
+      const timer = () => {
+        secondsInterval = setInterval(() => {
+          if (!pause) {
+            seconds -= 1;
+            document.querySelector('#tiempo').innerHTML = seconds;
+          }
+        }, 1000);
+        console.log('exec');
+        time = setInterval(() => {
+          if (!pause) {
+            posX = Math.floor(
+              Math.random() * document.documentElement.clientWidth
+            );
+            posY = Math.floor(
+              Math.random() * document.documentElement.clientHeight
+            );
+            document.querySelector('#abeja').style.left = posX + 'px';
+            document.querySelector('#abeja').style.top = posY + 'px';
+            tocado = false;
+
+            if (seconds <= 0) {
+              clearInterval(time);
+              clearInterval(secondsInterval);
+            }
+          }
+        }, 2000);
+      };
+
+      const score = () => {
+        if (tocado == false) {
+          tocado = true;
+          puntos += 1;
+          document.querySelector('#score').innerHTML = puntos;
+        }
+      };
+
+      const pausa = () => (pause == 1 ? (pause = 0) : (pause = 1));
+    </script>
+  </body>
+</html>

@@ -106,7 +106,15 @@
         }
       };
 
-      const pausa = () => (pause == 1 ? (pause = 0) : (pause = 1));
+      const pausa = () => {
+        if (pause == 1) {
+          pause = 0;
+          tocado = false;
+        } else {
+          pause = 1;
+          tocado = true;
+        }
+      };
     </script>
   </body>
 </html>

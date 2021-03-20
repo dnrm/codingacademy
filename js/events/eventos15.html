@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            .grid-container {
+              display: grid;
+              grid-template-columns: auto auto auto;
+              position:fixed;
+              width:100%;
+              height:100%;
+              justify-items: center;
+              align-items: center;
+            }
+            .grid-item {
+              padding: 20px;
+              font-size: 30px;
+              text-align: center;
+
+            }
+            #pelota {
+                  position: absolute;
+                  left: 300px;
+                  top: 600px;
+              }
+        </style>
+        <title>(っ◔◡◔)っ ♥ eventos 15 ♥</title>
+    </head>
+    <body>
+        <div class="grid-container" onmousemove="mueve(event)">
+            <p hidden id="bandera">0</p>
+            <div class="grid-item">
+                <p id="status">Toca el balón</p>
+                <img
+                    id="pelota"
+                    src="https://google.com/favicon.ico"
+                    onmouseover="toca()"
+                    onmouseout="reset()"
+                />
+            </div>
+            <div class="grid-item"></div>
+            <div class="grid-item">
+                <p>Goles:</p>
+                <p id="marcador">0</p>
+                <img
+                    id="porteria"
+                    src="https://drive.google.com/uc?export=view&id=18iOZop8QQfAZJsT57gW0Tu-X0qgFj-3E"
+                    onmouseover="gol()"
+                />
+            </div>
+        </div>
+        <script>
+            let touched = 0;
+            let img = document.querySelector('#pelota');
+            let marcador = document.querySelector('#marcador');
+            let goles = 0;
+            let tiempo;
+            let segundos = 0;
+            let timeStarted = 0;
+            //Tu código aquí
+            function toca() {
+                document.querySelector('#status').innerText = 'Ahora mete gol!';
+                touched = 1;
+                if (timeStarted == 0) {
+                    tiempo = setInterval(() => {
+                        segundos += 1;
+                        console.log(segundos);
+                        if (segundos == 10) {
+                            clearInterval(tiempo);
+                            displayGoals();
+                        };
+                    }, 1000);
+                    timeStarted = 1;
+                }
+            }
+
+            function reset() {
+                document.querySelector('#status').innerText = 'Toca el balón';
+            }
+
+            function mueve(e) {
+                if (touched == 1) {
+                    img.style.left = `${e.clientX - 30}px`;
+                    img.style.top = `${e.clientY - 30}px`;
+                }
+            }
+
+            function gol() {
+                touched == 1 ? goles += 1 : null;
+                marcador.innerHTML = goles;
+                touched = 0;
+                img.style.left = `300px`;
+                img.style.top = `600px`;
+            }
+
+            function displayGoals() {
+                document.querySelector('#status').innerHTML = `Felicidades! Metiste ${goles} goles. Toca el balón para volver a intentar.`;
+                timeStarted = 0;
+                segundos = 0;
+                img.style.left = `300px`;
+                img.style.top = `600px`;
+                goles = 0;
+            }
+        </script>
+    </body>
+</html>

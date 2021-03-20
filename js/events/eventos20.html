@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        font: normal 1em 'Arial';
+      }
+
+      table {
+        font: bold 2em 'Arial Narrow';
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 0.7;
+        padding: 8px;
+        border-spacing: 8px;
+        border: 1px solid #000;
+        background-color: #dbd807;
+        color: #ffffff;
+      }
+
+      .item td {
+        padding: 4px;
+        min-width: 32px;
+        box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.25);
+      }
+
+      .button {
+        background-color: #f44336; /* Red */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
+
+      .button:disabled {
+        border: 1px solid #999999;
+        background-color: #cccccc;
+        color: #666666;
+      }
+
+      #pantalla {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+      }
+
+      #abeja {
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body onload="" onkeydown="pausa(event)">
+    <div id="pantalla">
+      <table>
+        <tr class="item">
+          <td>Tiempo</td>
+          <td id="tiempo">20</td>
+        </tr>
+        <tr class="item">
+          <td>Score</td>
+          <td id="score">0</td>
+        </tr>
+        <tr class="item">
+          <td>
+            <input
+              type="button"
+              class="button"
+              value="Inicio"
+              onclick="start()"
+              id="boton"
+            />
+          </td>
+          <td id="score">
+            <select name="dificultad" id="dificultad">
+              <option value="facil">Fácil</option>
+              <option value="intermedio">Intermedio</option>
+              <option value="avanzado">Avanzado</option>
+              <option value="experto">Experto</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+
+      <p hidden id="bandera">0</p>
+      <p hidden id="pausa">0</p>
+
+      <img
+        src="https://drive.google.com/uc?export=view&id=10gsQ9AwEKuwMMpC_7XChRLJYXdW6E7j9"
+        id="abeja"
+        width="100"
+        onmouseover="score()"
+      />
+    </div>
+    <script src="./eventos20.js"></script>
+  </body>
+</html>

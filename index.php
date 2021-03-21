@@ -14,7 +14,7 @@
     </nav>
     <main>
         <?php
-            $scanned_directory = array_diff(scandir('./'), array('..', '.', '.gitignore', 'README.md', 'style.css'));
+            $scanned_directory = array_diff(scandir('./'), array('..', '.', '.gitignore', 'README.md', 'style.css', '.DS_Store', '.prettierrc.json'));
             foreach($scanned_directory as $file){
                 echo'<a href="'.$file.'" class="link">'.$file.'</a>';
             }

@@ -1,0 +1,83 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Inconsolata', monospace;
+  font-size: 1.8vw;
+}
+
+body {
+  min-height: 1000px;
+  margin: 0;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #212738;
+  color: white;
+}
+
+td {
+  padding: 20px;
+  margin: 0;
+}
+
+/* Seleccionar celdas */
+
+table {
+  overflow: hidden;
+}
+
+tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.21) !important;
+}
+
+tbody td, th {
+  position: relative;
+}
+tbody td:hover::after,
+tbody th:hover::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.21);
+  left: 0;
+  top: -5000px;
+  height: 10000px;
+  width: 100%;
+  z-index: -1;
+}
+
+
+/* Aquí acaba */
+
+header h1 {
+    color: white;
+    background-color: #212738;
+    font-size: 4vw;
+    text-align: center;
+}
+
+footer {
+  background-color: #212738;
+  border-top: 4px #949494 solid;
+}
+
+footer h1 {
+  color: white;
+  padding: 50px;
+  text-align: center;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}

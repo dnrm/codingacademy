@@ -1,0 +1,133 @@
+body {
+  padding: 10px;
+}
+
+li {
+  padding:10px;
+  margin: 5px;
+}
+
+#highlighted {
+  border: 1px solid black;
+  background-color: yellow;
+  color: red;
+  text-decoration: none;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+#dashed {
+  border: 1px dashed black;
+}
+
+#highlightedgreen {
+  border: 1px solid black;
+  background-color: green;
+  color: red;
+  text-decoration: none;
+}
+
+div {
+  background-color: blue;
+  animation: huerot 2s infinite;
+  color: white;
+}
+
+@keyframes huerot {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(180deg);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+#round {
+  border-style: groove;
+  border-radius: 50px;
+}
+
+#neum {
+  box-shadow:  -2px -2px 6px rgba(255,255,255, 0.1),
+    2px 2px 6px rgba(0,0,0, 0.8);
+    border-left: 10px #66b3ff solid;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s;
+}
+
+#neum:hover {
+  background-color: black;
+  color: white;
+}
+
+#dotted {
+  border-style: dotted;
+  border-color: black;
+  border-width: thin;
+}
+
+#neum2 {
+  box-shadow:  -2px -2px 6px rgba(255,255,255, 0.1),
+    2px 2px 6px rgba(0,0,0, 0.8);
+    border-left: 10px #ff5050 solid;
+    font-family: 'Poppins', sans-serif;
+    transition: 1s;
+}
+
+#neum2:hover {
+  box-shadow: inset -2px -2px 6px rgba(255,255,255, 0.1),
+    inset 2px 2px 6px rgba(0,0,0, 0.8);
+}
+
+#grow {
+  transition: all .2s ease-in-out;
+  box-shadow:  -2px -2px 6px rgba(255,255,255, 0.1),
+    2px 2px 6px rgba(0,0,0, 0.8);
+}
+
+#grow:hover {
+  transform: scale(1.05);
+}
+
+#rotate {
+  background: #fff;
+  animation: rotatelist 3s infinite;
+  width: 30%;
+  border: 1px solid black;
+}
+
+@keyframes rotatelist {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#excited {
+  background: #fff;
+  border: 1px solid black;
+  animation: happy 0.2s infinite;
+  animation-play-state: paused;
+  padding: 20px;
+}
+
+#excited:hover {
+  animation-play-state: running;
+}
+
+@keyframes happy {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tablas</title>
+    <link rel="stylesheet" href="tablacss.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Esta es una tabla con CSS</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Fabricante</th>
+          <th>Modelo</th>
+          <th>Año</th>
+        </tr>
+      </thead>
+      <tr>
+        <td onclick="changeBackground()" id="change">Ferrari</td>
+        <td>Spider</td>
+        <td>2018</td>
+      </tr>
+      <tr id="fav">
+        <td>Lamborghini</td>
+        <td>Reventón</td>
+        <td>2016</td>
+      </tr>
+      <tr>
+        <td>Dodge</td>
+        <td>SRT-8</td>
+        <td>2020</td>
+      </tr>
+      <tr>
+        <td>Audi</td>
+        <td>R8</td>
+        <td>2019</td>
+      </tr>
+      <tr>
+        <td>Volkswagen</td>
+        <td>Beetle</td>
+        <td>1967</td>
+      </tr>
+      <tr>
+        <td>Bugatti</td>
+        <td>Chiron</td>
+        <td>2019</td>
+      </tr>
+      <tr>
+        <td>Toyota</td>
+        <td>Supra</td>
+        <td>1998</td>
+      </tr>
+      <tr>
+        <td>Fisher Price</td>
+        <td>Ñoooom para bebés</td>
+        <td>2014</td>
+      </tr>
+    </table>
+    <script type="text/javascript">
+      function changeBackground() {
+        document.getElementById("change").style.backgroundColor = "yellow";
+      }
+    </script>
+  </body>
+</html>

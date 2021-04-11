@@ -1,0 +1,23 @@
+button {
+  border-top: 4px green dotted;
+  border-left: 4px pink dotted;
+  border-bottom: 4px red dotted;
+  border-right: 4px blue dotted;
+  border-radius: 25px;
+  background-color: white;
+  color: red;
+  padding: 15px 50px;
+  font-size: 40px;
+  outline: none;
+  text-align: left;
+}
+
+button:hover {
+  cursor: help;
+}
+
+button:active {
+  -webkit-box-shadow: 5px 5px 0px 0px rgba(255,0,0,1);
+  -moz-box-shadow: 5px 5px 0px 0px rgba(255,0,0,1);
+  box-shadow: 5px 5px 0px 0px rgba(255,0,0,1);
+}

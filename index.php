@@ -30,7 +30,6 @@
                 document.getElementsByTagName('main')[0].innerHTML = `<p class="link no__files">No files</p>`
             }
         });
-        console.log(el.length == 1)
     </script>
 </body>
 </html>

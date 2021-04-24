@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animations 2</title>
+    <style>
+      .container {
+        margin-top: 20px;
+        width: 400px;
+        height: 50px;
+        position: relative;
+        background: yellow;
+      }
+
+      .animate {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        background-color: red;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="main();">Click Me</button>
+    <p id="vueltas"></p>
+    <div class="container">
+      <div class="animate"></div>
+    </div>
+    <script>
+      const main = () => {
+        let element = document.querySelector('.animate');
+        let status = document.querySelector('#vueltas');
+        let init = 0;
+        let vueltas = 0;
+        let interval = setInterval(() => {
+          if (vueltas < 10) {
+            if (init == 350) {
+              vueltas += 1;
+              status.innerHTML = vueltas;
+              init = 0;
+            } else {
+              init++;
+              element.style.left = `${init}px`;
+              status.innerHTML = vueltas;
+            }
+          } else {
+            clearInterval(interval);
+          }
+        }, 2);
+      };
+    </script>
+  </body>
+</html>

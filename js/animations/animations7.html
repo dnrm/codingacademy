@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animations 6</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      button {
+        padding: 5px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="controls">
+      <button onclick="start();">Start</button>
+      <button onclick="pause();">Stop</button>
+    </div>
+    <h1>Tiempo: <span id="time">0</span></h1>
+    <script>
+      let seconds = 0;
+      let isPaused = true;
+      let display = document.querySelector('#time');
+      let clock = setInterval(() => {
+        if (!isPaused) {
+          seconds++;
+          display.innerHTML = seconds;
+        }
+        console.log('hola :)')
+      }, 1000);
+
+      const start = () => {
+        isPaused = false;
+      };
+
+      const pause = () => {
+        isPaused == true ? (isPaused = false) : (isPaused = true);
+      };
+    </script>
+  </body>
+</html>

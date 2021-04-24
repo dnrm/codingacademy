@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations 6</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="start();">Start timer</button>
+    <h1>Tiempo: <span id="time">10</span></h1>
+    <script>
+        const start = () => {
+            let seconds = 9;
+            let span = document.querySelector('#time');
+            const time = setInterval(() => {
+                span.innerHTML = seconds;
+                seconds--;
+                if (seconds < 0) {
+                    span.innerHTML = 'Boom D:';
+                    clearInterval(time);
+                }
+            }, 1000)
+        }
+    </script>
+</body>
+</html>

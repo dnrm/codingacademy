@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animations 9 Gato O_o</title>
+    <style>
+        #gato {
+            position: absolute;
+            left: 0px;
+        }
+    </style>
+  </head>
+  <body>
+    <img
+      src="https://www.kasandbox.org/programming-images/misc/cat-walk.gif"
+      alt="un gato caminando"
+      id="gato"
+    />
+    <script>
+      var myVar;
+      let gato = document.getElementById('gato');
+      let pos = 0;
+
+      console.log(pos, document.body.clientWidth)
+
+      function camina() {
+        document.getElementById('gato').style.left = '1px';
+        myVar = setInterval(frame, 15);
+      }
+
+      function frame() {
+        if (pos < document.body.clientWidth - 240) {
+            pos++;
+            gato.style.left = pos + 'px';
+        }
+      }
+
+      window.onload = camina();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        #segment {
+            width: 0px;
+            height: 25px;
+            background-color: lime;
+            float: left;
+        }
+
+        #body {
+            width: 60px;
+            height: 25px;
+            border: solid grey 5px;
+            float: left;
+        }
+
+        #head {
+            width: 5px;
+            height: 15px;
+            margin-top: 10px;
+            background-color: grey;
+            float: left;
+        }
+    </style>
+
+    <body>
+        <div id="body">
+            <div id="segment"></div>
+        </div>
+        <div id="head"></div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+        <script>
+            anime({
+                targets: '#segment',
+                width: 60,
+                duration: 5000,
+                easing: 'linear',
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Leaflet 3</title>
+        <meta property="og:title" content="Leaflet 3">
+        <meta property="og:image" content="https://images.unsplash.com/photo-1551569723-a025182e9464">
+        <meta property="og:description" content="Leaflet exercise 3">
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+            integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+            crossorigin=""
+        />
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+
+            #mapid {
+                height: 100vh;
+            }
+        </style>
+        <script
+            src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""
+        ></script>
+    </head>
+    <body>
+        <div id="mapid"></div>
+        <script>
+            var mymap = L.map('mapid').setView([-77.554861, -20.447674], 10);
+
+            L.tileLayer(
+                'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',
+                {
+                    attribution:
+                        'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                    zoom: 1,
+                    id: 'mapbox/streets-v11',
+                    tileSize: 512,
+                    accessToken:
+                        'pk.eyJ1IjoiZG5ybSIsImEiOiJja29xMGU2ZmwwOXpmMm9uMncwNTQ1emVyIn0.1Tud9PJCLZn5q-9RVG7vtw',
+                }
+            ).addTo(mymap);
+
+            let polygonData = [[-77.534675, -20.503455], [-77.547118, -20.386744], [-77.567237, -20.346924], [-77.575512, -20.448532], [-77.558957, -20.517186], [-77.545341, -20.533663]]
+
+            var marker = L.polygon(polygonData, {color: 'blue'}).addTo(mymap);
+
+
+            marker
+                .bindPopup('<b>Hola este es el cerro de la silla</b>')
+
+            var popup = L.popup();
+
+            function onMapClick(e) {
+                popup
+                    .setLatLng(e.latlng)
+                    .setContent('You clicked the map at ' + e.latlng.toString())
+                    .openOn(mymap);
+            }
+
+            mymap.on('click', onMapClick);
+        </script>
+    </body>
+</html>

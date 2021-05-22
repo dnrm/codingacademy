@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Leaflet 3</title>
+        <meta property="og:title" content="Leaflet 3" />
+        <meta
+            property="og:image"
+            content="https://images.unsplash.com/photo-1551569723-a025182e9464"
+        />
+        <meta property="og:description" content="Leaflet exercise 3" />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+            integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+            crossorigin=""
+        />
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+
+            #mapid {
+                height: 100vh;
+            }
+        </style>
+        <script
+            src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""
+        ></script>
+    </head>
+    <body>
+        <div id="mapid"></div>
+        <script>
+            let userPosition = navigator.geolocation.getCurrentPosition((r) => {
+                var map = L.map('mapid').setView([r.coords.latitude, r.coords.longitude], 10);
+
+                L.tileLayer(
+                    'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',
+                    {
+                        attribution:
+                            'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                        id: 'mapbox/streets-v11',
+                        accessToken:
+                            'pk.eyJ1IjoiZG5ybSIsImEiOiJja29xMGU2ZmwwOXpmMm9uMncwNTQ1emVyIn0.1Tud9PJCLZn5q-9RVG7vtw',
+                    }
+                ).addTo(map);
+
+                console.log(r);
+                let marker = L.marker([r.coords.latitude, r.coords.longitude]).addTo(map);
+                let circle = L.circle([r.coords.latitude, r.coords.longitude], { radius: 2000}).addTo(map)
+            });
+        </script>
+    </body>
+</html>

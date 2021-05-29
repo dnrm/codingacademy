@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+        <title>CanvasJS 2</title>
+        <style>
+            #container {
+                width: 50%;
+                height: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container"></div>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <script>
+            const chart = new CanvasJS.Chart('container', {
+                animationEnabled: true,
+                exportEnabled: true,
+                theme: 'light1',
+                title: {
+                    text: 'Cantidad Alumnos por Mes',
+                    fontFamily: 'sans-serif',
+                    fontWeight: 900
+                },
+                axisX: {
+                    title: 'Mes',
+                    labelAngle: -30,
+                    interval: 1,
+                    labelFontFamily: 'sans-serif',
+                    titleFontFamily: 'sans-serif',
+                },
+                axisY: {
+                    title: 'Alumnos',
+                    labelFontFamily: 'sans-serif',
+                    titleFontFamily: 'sans-serif',
+                },
+                data: [
+                    {
+                        type: 'line',
+                        dataPoints: [
+                            {
+                                x: 1,
+                                y: 80,
+                                label: 'Enero',
+                                indexLabel: '★ Menor',
+                                markerType: 'star',
+                            },
+                            {
+                                x: 2,
+                                y: 87,
+                                label: 'Febrero',
+                                indexLabel: '{y}',
+                            },
+                            { x: 3, y: 90, label: 'Marzo', indexLabel: '{y}' },
+                            { x: 4, y: 83, label: 'Abril', indexLabel: '{y}' },
+                            { x: 5, y: 88, label: 'Mayo', indexLabel: '{y}' },
+                            { x: 6, y: 100, label: 'Junio', indexLabel: '{y}' },
+                            {
+                                x: 7,
+                                y: 110,
+                                label: 'Julio',
+                                indexLabel: '★ Mayor',
+                                markerType: 'star',
+                            },
+                            { x: 8, y: 98, label: 'Agosto', indexLabel: '{y}' },
+                            {
+                                x: 9,
+                                y: 93,
+                                label: 'Septiembre',
+                                indexLabel: '{y}',
+                            },
+                            {
+                                x: 10,
+                                y: 95,
+                                label: 'Octubre',
+                                indexLabel: '{y}',
+                            },
+                            {
+                                x: 11,
+                                y: 99,
+                                label: 'Noviembre',
+                                indexLabel: '{y}',
+                            },
+                            {
+                                x: 12,
+                                y: 103,
+                                label: 'Diciembre',
+                                indexLabel: '{y}',
+                            },
+                        ],
+                    },
+                ],
+            });
+
+            chart.render();
+        </script>
+    </body>
+</html>

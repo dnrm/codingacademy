@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CanvasJS 1</title>
+        <style>
+            #container {
+                width: 50%;
+                height: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container"></div>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <script>
+            const chart = new CanvasJS.Chart('container', {
+                animationEnabled: true,
+                exportEnabled: true,
+                theme: 'light1',
+                title: {
+                    text: 'Cantidad Alumnos por Grupo',
+                },
+                axisX: {
+                    title: 'Grupo',
+                    labelAngle: -30,
+                },
+                axisY: {
+                    title: 'Cantidad de Alumnos',
+                    minimum: 0
+                },
+                data: [
+                    {
+                        type: 'bar',
+                        dataPoints: [
+                            { y: 22, label: 'Lunes' },
+                            { y: 15, label: 'Martes' },
+                            { y: 25, label: 'Miércoles' },
+                            { y: 18, label: 'Jueves' },
+                            { y: 5, label: 'Viernes' },
+                            { y: 18, label: 'Sábado' },
+                        ],
+                    },
+                ],
+            });
+
+            chart.render();
+        </script>
+    </body>
+</html>

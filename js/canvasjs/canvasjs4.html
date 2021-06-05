@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CanvasJS 4</title>
+        <meta property="og:image" content="https://medina.dev/codingacademy/js/canvasjs/canvasjs.jpg">
+        <meta property="og:title" content="CanvasJS 4">
+        <style>
+            #container {
+                width: 50%;
+                height: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container"></div>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <script>
+            let p = parseInt(prompt('Cuantos alumnos de primaria?'));
+            let s = parseInt(prompt('Cuantos alumnos de secundaria?'));
+            let pr = parseInt(prompt('Cuantos alumnos de preparatoria?'));
+            let u = parseInt(prompt('Cuantos alumnos de universidad?'));
+
+            const chart = new CanvasJS.Chart('container', {
+                animationEnabled: true,
+                exportEnabled: true,
+                theme: 'light1', // "light1", "light2", "dark1", "dark2"
+                title: {
+                    text: 'Porcentaje de Alumnos por Grado',
+                },
+                axisY: {
+                    title: 'Alumnos',
+                },
+                axisX: {
+                    includeZero: true,
+                    labelAngle: -30,
+                    title: 'Grado',
+                },
+                data: [
+                    {
+                        type: 'pie',
+                        indexLabelFontColor: '#5A5757',
+                        indexLabelFontSize: 16,
+                        showInLegend: 'true',
+                        toolTipContent: '{label} - #percent%',
+                        legendText: '{label}',
+                        indexLabel: '{label}',
+                        indexLabelPlacement: 'outside',
+                        dataPoints: [
+                            { y: p, label: 'Primaria' },
+                            { y: s, label: 'Secundaria' },
+                            {
+                                y: pr,
+                                label: 'Preparatoria',
+                            },
+                            { y: u, label: 'Universidad' },
+                        ],
+                    },
+                ],
+            });
+            chart.render();
+        </script>
+    </body>
+</html>

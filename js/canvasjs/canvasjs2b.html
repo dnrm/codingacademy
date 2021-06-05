@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+        <title>CanvasJS 2b</title>
+        <meta
+            property="og:image"
+            content="https://medina.dev/codingacademy/js/canvasjs/canvasjs.jpg"
+        />
+        <meta property="og:title" content="CanvasJS 2" />
+        <style>
+            #container {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <button onclick="addData()">Agregar Información</button>
+        <div id="container"></div>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <script>
+
+            let max = 109;
+
+            let data = [
+                {
+                    x: 1,
+                    y: 80,
+                    label: 'Enero',
+                    markerType: 'star',
+                    indexLabel: 80 > max ? '★ Mayor' : '{y}',
+                },
+                {
+                    x: 2,
+                    y: 87,
+                    label: 'Febrero',
+                    indexLabel: 87 > max ? '★ Mayor' : '{y}',
+                },
+                {
+                    x: 3,
+                    y: 90,
+                    label: 'Marzo',
+                    indexLabel: '{y}',
+                    indexLabel: 90 > max ? '★ Mayor' : '{y}',
+                },
+                {
+                    x: 4,
+                    y: 83,
+                    label: 'Abril',
+                    indexLabel: '{y}',
+                    indexLabel: 83 > max ? '★ Mayor' : '{y}',
+                },
+                {
+                    x: 5,
+                    y: 88,
+                    label: 'Mayo',
+                    indexLabel: '{y}',
+                    indexLabel: 88 > max ? '★ Mayor' : '{y}',
+                },
+                {
+                    x: 6,
+                    y: 100,
+                    label: 'Junio',
+                    indexLabel: '{y}',
+                    indexLabel: 100 > max ? '★ Mayor' : '{y}',
+                },
+                {
+                    x: 7,
+                    y: 110,
+                    label: 'Julio',
+                    indexLabel: 110 > max ? '★ Mayor' : '{y}',
+                    markerType: 'star',
+                },
+                {
+                    x: 8,
+                    y: 98,
+                    label: 'Agosto',
+                    indexLabel: '{y}',
+                    indexLabel: 98 > max ? '★ Mayor' : '{y}',
+                },
+                {
+                    x: 9,
+                    y: 93,
+                    label: 'Septiembre',
+                    indexLabel: 93 > max ? '★ Mayor' : '{y}',
+                },
+                {
+                    x: 10,
+                    y: 95,
+                    label: 'Octubre',
+                    indexLabel: 95 > max ? '★ Mayor' : '{y}',
+                },
+                {
+                    x: 11,
+                    y: 99,
+                    label: 'Noviembre',
+                    indexLabel: 99 > max ? '★ Mayor' : '{y}',
+                },
+                {
+                    x: 12,
+                    y: 103,
+                    label: 'Diciembre',
+                    indexLabel: 103 > max ? '★ Mayor' : '{y}',
+                },
+            ];
+
+            let chart = new CanvasJS.Chart('container', {
+                animationEnabled: true,
+                exportEnabled: true,
+                theme: 'light1',
+                title: {
+                    text: 'Cantidad Alumnos por Mes',
+                    fontFamily: 'sans-serif',
+                    fontWeight: 900,
+                },
+                axisX: {
+                    title: 'Mes',
+                    labelAngle: -30,
+                    labelFontFamily: 'sans-serif',
+                    titleFontFamily: 'sans-serif',
+                },
+                axisY: {
+                    title: 'Alumnos',
+                    labelFontFamily: 'sans-serif',
+                    titleFontFamily: 'sans-serif',
+                },
+                data: [
+                    {
+                        type: 'line',
+                        dataPoints: data,
+                    },
+                ],
+            });
+
+            let yValues = [];
+            chart.options.data[0].dataPoints.forEach((i) => yValues.push(i.y));
+            console.log(yValues);
+
+            max = Math.max(...yValues);
+
+            const months = [
+                'Enero',
+                'Febrero',
+                'Marzo',
+                'Abril',
+                'Mayo',
+                'Junio',
+                'Julio',
+                'Agosto',
+                'Septiembre',
+                'Octubre',
+                'Noviembre',
+                'Diciembre',
+            ];
+            let currentMonthIndex = 0;
+            let xCount = 12;
+
+            chart.render();
+
+            const addData = () => {
+                console.log(max);
+                let value = Math.floor(Math.random() * (115 - 75 + 1) + 75);
+                console.log(value);
+
+                console.log(value > max);
+
+                chart.options.data[0].dataPoints.push({
+                    x: xCount + 1,
+                    y: value,
+                    label: months[currentMonthIndex],
+                    indexLabel: value > max ? '★ Mayor' : '{y}',
+                });
+                currentMonthIndex == 11
+                    ? (currentMonthIndex = 0)
+                    : (currentMonthIndex += 1);
+                xCount += 1;
+                chart.render();
+            };
+        </script>
+    </body>
+</html>

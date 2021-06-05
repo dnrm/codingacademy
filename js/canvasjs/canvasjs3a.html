@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CanvasJS 3a</title>
+        <style>
+            #container {
+                width: 50%;
+                height: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container"></div>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <script>
+            let p = parseInt(prompt('Cuantos alumnos de primaria?'));
+            let s = parseInt(prompt('Cuantos alumnos de secundaria?'));
+            let pr = parseInt(prompt('Cuantos alumnos de preparatoria?'));
+            let u = parseInt(prompt('Cuantos alumnos de universidad?'));
+
+            let max = Math.max(p, s, pr, u);
+            console.log(max)
+
+            const chart = new CanvasJS.Chart('container', {
+                animationEnabled: true,
+                exportEnabled: true,
+                theme: 'light1', // "light1", "light2", "dark1", "dark2"
+                title: {
+                    text: 'Cantidad Alumnos por Grado',
+                },
+                axisY: {
+                    title: 'Alumnos',
+                },
+                axisX: {
+                    includeZero: true,
+                    labelAngle: -30,
+                    title: 'Grado',
+                },
+                data: [
+                    {
+                        type: 'column', //change type to bar, line, area, pie, etc
+                        //indexLabel: "{y}", //Shows y value on all Data Points
+                        indexLabelFontColor: '#5A5757',
+                        indexLabelFontSize: 16,
+                        indexLabelPlacement: 'outside',
+                        dataPoints: [
+                            { x: 1, y: p, label: 'Primaria', indexLabel: `${p.toString()} ${max == p ? '(Mayor)' : ''}` },
+                            { x: 2, y: s, label: 'Secundaria', indexLabel: `${s.toString()} ${max == s ? '(Mayor)' : ''}` },
+                            {
+                                x: 3,
+                                y: pr,
+                                label: 'Preparatoria',
+                                indexLabel: `${pr.toString()} ${max == pr ? '(Mayor)' : ''}`
+                            },
+                            { x: 4, y: u, label: 'Universidad', indexLabel: `${u.toString()} ${max == u ? '(Mayor)' : ''}` },
+                        ],
+                    },
+                ],
+            });
+            chart.render();
+        </script>
+    </body>
+</html>
